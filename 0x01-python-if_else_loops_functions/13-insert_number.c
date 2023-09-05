@@ -3,32 +3,32 @@
 /**
  * insert_node - puts a numb into a singly-linked list.
  * @head: Pointer to the head of the linked list.
- * @numb: The numb to insert.
+ * @number: The numb to insert.
  *
  * Return: If fxn fails - NULL.
  * Otherwise - Pointer to new node.
  */
-listint_t *insert_node(listint_t **head, int numb)
+listint_t *insert_node(listint_t **head, int number)
 {
 	listint_t *node = *head, *new;
 
 	new = malloc(sizeof(listint_t));
 	if (new == NULL)
 		return (NULL);
-	new->w = numb;
+	new->n = number;
 
-	if (node == NULL || node->w >= numb)
+	if (node == NULL || node->n >= number)
 	{
-		new->nxt = node;
+		new->next = node;
 		*head = new;
 		return (new);
 	}
 
-	while (node && node->nxt && node->nxt->w < numb)
-		node = node->nxt;
+	while (node && node->next && node->next->n < number)
+		node = node->next;
 
-	new->nxt = node->nxt;
-	node->nxt = new;
+	new->next = node->next;
+	node->next = new;
 
 	return (new);
 }

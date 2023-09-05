@@ -5,21 +5,21 @@
 
 /**
  * struct listint_s - this is singly linked list
- * @w: our integer
- * @nxt:this points to the next node
+ * @n: our integer
+ * @next:this points to the next node
  *
  * Description: singly linked list node structure
  *
  */
 typedef struct listint_s
 {
-	int w;
-	struct listint_s *nxt;
+	int n;
+	struct listint_s *next;
 } listint_t;
 
 size_t print_listint(const listint_t *h);
-listint_t *add_nodeint_end(listint_t **head, const int w);
+listint_t *add_nodeint_end(listint_t **head, const int n);
 void free_listint(listint_t *head);
-listint_t *insert_node(listint_t **head, int numb);
+listint_t *insert_node(listint_t **head, int number);
 
 #endif /* LISTS_H */
